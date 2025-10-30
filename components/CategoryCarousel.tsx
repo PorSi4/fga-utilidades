@@ -14,10 +14,10 @@ interface Category {
 
 const categories: Category[] = [
     {
-        id: "recomendacoes",
-        title: "Minhas Recomendações",
-        image: "/recomendacoes.png",
-        affiliateLink: "https://www.mercadolivre.com.br/social/fariciogarcia/lists/5eb27165-0608-4fb4-b37f-2453e3656ef9#tracking_id=86e7cb82-7828-4701-a3b8-ecc50a13f66f"
+        id: "cameras",
+        title: "Câmeras de Segurança",
+        image: "/camerasdeSegu.png",
+        affiliateLink: "https://www.mercadolivre.com.br/social/fariciogarcia/lists/4b2a311a-1cf3-417c-a7ee-6bf1d8359417#tracking_id=acbf7260-ded3-49bf-ad43-f4652d74bc29"
     },
     {
         id: "celulares",
@@ -42,12 +42,6 @@ const categories: Category[] = [
         title: "Utensílios domésticos",
         image: "/utidomes.png",
         affiliateLink: "https://www.mercadolivre.com.br/social/fariciogarcia/lists/db053961-3bc0-422e-a170-8bb05d021c51#tracking_id=7d4e6877-fbee-4b87-96f5-d3c05fc1af4a"
-    },
-    {
-        id: "cameras",
-        title: "Câmeras de Segurança",
-        image: "/camerasdeSegu.png",
-        affiliateLink: "https://www.mercadolivre.com.br/social/fariciogarcia/lists/4b2a311a-1cf3-417c-a7ee-6bf1d8359417#tracking_id=acbf7260-ded3-49bf-ad43-f4652d74bc29"
     },
     {
         id: "refletores",
@@ -104,7 +98,7 @@ export function CategoryCarousel() {
     }
 
     return (
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-gray-50">
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
                     Categorias

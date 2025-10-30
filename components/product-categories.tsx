@@ -90,7 +90,7 @@ const categories = [
 
 export function ProductCategories() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         {categories.map((category, index) => (
           <div key={category.id} id={category.id} className={index > 0 ? "mt-16" : ""}>
