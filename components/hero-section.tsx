@@ -22,12 +22,12 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 text-balance">
+        <h1 className="text-4xl md:text-6xl font-bold text-white -mt-40 mb-10 text-balance">
           Os Melhores Produtos com Preços Exclusivos
         </h1>
         <Button 
           size="lg" 
-          className="cursor-pointer bg-[#FFD700] text-black hover:bg-[#FFD700]/90 font-semibold text-lg px-8"
+          className=" mb-10 cursor-pointer bg-[#FFD700] text-black hover:bg-[#FFD700]/90 font-semibold text-lg px-8"
           onClick={handleOpenStore}
         >
           Explorar Produtos
