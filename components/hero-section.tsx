@@ -9,17 +9,25 @@ export function HeroSection() {
 
   return (
     <section className="relative h-[710px] md:h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url(/backgroundHero.png)",
-        }}
-      >
+      {/* Video Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/backvideo.mp4" type="video/mp4" />
+          <source src="/backvideo.mp4" type="video/webm" />
+          {/* Fallback para caso o vídeo não carregue */}
+          Seu navegador não suporta o elemento de vídeo.
+        </video>
+        {/* Overlay escuro para melhor contraste */}
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      {/* Content Principal (título + botão) */}
+      {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-white -mt-40 mb-10 text-balance">
           Os Melhores Produtos com Preços Exclusivos
@@ -31,10 +39,9 @@ export function HeroSection() {
         >
           Explorar Produtos
         </Button>
-      </div>
 
-      {/* Texto descritivo - POSICIONADO SEPARADAMENTE */}
-      <div className="absolute bottom-10 left-0 right-0 z-10">
+        {/* Texto descritivo */}
+        <div className="absolute -bottom-70 left-0 right-0 z-10">
         <div className="container mx-auto px-4 text-center">
           <p className="text-white/85 text-sm font-light max-w-3xl mx-auto leading-relaxed">
             Aproveite o melhor da conveniência digital com a confiança de quem redireciona
@@ -42,6 +49,7 @@ export function HeroSection() {
             nova oportunidade de descobrir o que realmente faz diferença no seu dia.
           </p>
         </div>
+      </div>
       </div>
     </section>
   )

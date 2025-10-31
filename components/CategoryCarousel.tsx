@@ -140,7 +140,7 @@ export function CategoryCarousel() {
                                         className="w-full bg-black hover:bg-black/90 text-white font-semibold"
                                         onClick={() => handleAffiliateClick(category.affiliateLink)}
                                     >
-                                        Ver Produtos
+                                        Ir para o Mercado Livre
                                     </Button>
                                 </CardFooter>
                             </Card>
