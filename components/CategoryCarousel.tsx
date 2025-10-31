@@ -57,6 +57,17 @@ const categories: Category[] = [
     },
 ]
 
+// Textos personalizados para cada categoria
+const categoryMessages: Record<string, string> = {
+    cameras: "Clique na categoria Câmeras de Segurança",
+    celulares: "Clique na categoria Celulares", 
+    iphone: "Clique na categoria Iphones",
+    beleza: "Clique na categoria Beleza",
+    utensiliosDomesticos: "Clique na categoria Utensílios domésticos",
+    refletores: "Clique na categoria Refletores LED",
+    airfryers: "Clique na categoria Air Fryers"
+}
+
 export function CategoryCarousel() {
     const scrollContainerRef = useRef<HTMLDivElement>(null)
     const [canScrollLeft, setCanScrollLeft] = useState(false)
@@ -93,8 +104,27 @@ export function CategoryCarousel() {
         })
     }
 
-    const handleAffiliateClick = (link: string) => {
-        window.open(link, '_blank', 'noopener,noreferrer')
+    const handleAffiliateClick = (category: Category) => {
+        const message = categoryMessages[category.id] || `Clique na categoria ${category.title}`
+        
+        console.log('🎯 Pixel Event:', message)
+        
+        // Evento do Pixel com texto personalizado
+        if (typeof window.fbq !== 'undefined') {
+            window.fbq('track', 'ViewContent', {
+                custom_message: message,
+                content_name: `categoria_${category.id}`,
+                content_category: 'category_click',
+                content_type: 'product_group',
+                content_ids: [category.id],
+                button_text: 'Ir para o Mercado Livre',
+                value: 0,
+                currency: 'BRL'
+            })
+            console.log('✅ Evento ViewContent disparado:', message)
+        }
+
+        window.open(category.affiliateLink, '_blank', 'noopener,noreferrer')
     }
 
     return (
@@ -117,7 +147,7 @@ export function CategoryCarousel() {
                         </Button>
                     )}
 
-                    {/* Categories Container - EXATAMENTE IGUAL AO PRODUCT CAROUSEL */}
+                    {/* Categories Container */}
                     <div
                         ref={scrollContainerRef}
                         className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
@@ -138,7 +168,7 @@ export function CategoryCarousel() {
                                 <CardFooter className="p-4 pt-0">
                                     <Button
                                         className="w-full bg-black hover:bg-black/90 text-white font-semibold"
-                                        onClick={() => handleAffiliateClick(category.affiliateLink)}
+                                        onClick={() => handleAffiliateClick(category)}
                                     >
                                         Ir para o Mercado Livre
                                     </Button>
