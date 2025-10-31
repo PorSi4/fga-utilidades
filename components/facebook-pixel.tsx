@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 import Script from 'next/script'
 import { useEffect } from 'react'
 
-const FB_PIXEL_ID = process.env.FB_PIXEL_ID
+const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID
 const TEST_EVENT_CODE = process.env.FB_PIXEL_TEST_CODE
 
 export function FacebookPixel() {
