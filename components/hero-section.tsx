@@ -21,7 +21,7 @@ export function HeroSection() {
 
       {/* Content Principal (título + botão) */}
       <div className="relative z-10 container mx-auto px-4 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold text-white -mt-50 mb-10 text-balance">
+        <h1 className="text-4xl md:text-6xl font-bold text-white -mt-40 mb-10 text-balance">
           Os Melhores Produtos com Preços Exclusivos
         </h1>
         <Button
@@ -34,7 +34,7 @@ export function HeroSection() {
       </div>
 
       {/* Texto descritivo - POSICIONADO SEPARADAMENTE */}
-      <div className="absolute bottom-20 left-0 right-0 z-10">
+      <div className="absolute bottom-10 left-0 right-0 z-10">
         <div className="container mx-auto px-4 text-center">
           <p className="text-white/85 text-sm font-light max-w-3xl mx-auto leading-relaxed">
             Aproveite o melhor da conveniência digital com a confiança de quem redireciona
